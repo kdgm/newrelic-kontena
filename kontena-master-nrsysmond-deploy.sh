@@ -9,6 +9,8 @@ kontena master ssh -i $EC2_KEYS_DIR/kontena.pem \
 kontena master ssh -i $EC2_KEYS_DIR/kontena.pem \
   docker rm nrsysmond
 
+# Use settings from
+# https://github.com/christian-blades-cb/newrelic-docker/blob/master/newrelic.service
 
 kontena master ssh -i $EC2_KEYS_DIR/kontena.pem \
   docker run --name nrsysmond -d --restart always \
