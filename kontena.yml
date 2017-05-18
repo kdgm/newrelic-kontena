@@ -20,14 +20,15 @@ services:
         type: env
     environment:
       NRSYSMOND_cgroup_style: 0
-      NRSYSMOND_host_root: /host
-      NRSYSMOND_cgroup_root: /host/sys/fs/cgroup
+      # NRSYSMOND_host_root: /host
+      # NRSYSMOND_cgroup_root: /host/sys/fs/cgroup
       NRSYSMOND_loglevel: debug
     network_mode: host
+    pid: host
+    privileged: true
     deploy:
       strategy: daemon
     volumes:
-      - /proc:/host/proc:ro
-      - /dev:/host/dev:ro
-      - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
+      - /dev:/dev:ro
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
       - /var/run/docker.sock:/var/run/docker.sock
