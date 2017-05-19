@@ -22,7 +22,7 @@ services:
       NRSYSMOND_cgroup_style: 0
       # NRSYSMOND_host_root: /host
       # NRSYSMOND_cgroup_root: /host/sys/fs/cgroup
-      NRSYSMOND_loglevel: debug
+      # NRSYSMOND_loglevel: debug
     network_mode: host
     pid: host
     privileged: true
