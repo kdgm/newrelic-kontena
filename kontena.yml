@@ -14,7 +14,7 @@ variables:
 services:
   nrsysmond:
     build: .
-    image: quay.io/kdgm/newrelic:latest
+    image: kdgm/newrelic-kontena:latest
     secrets:
       - secret: NEWRELIC_LICENSE_KEY
         name: NRSYSMOND_license_key
