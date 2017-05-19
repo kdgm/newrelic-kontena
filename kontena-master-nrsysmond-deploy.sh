@@ -1,19 +1,22 @@
 #!/bin/bash
 
-# To run NewRelic system monitor (nrsysmond) on the master node
-# start the christianbladescb/newrelic-coreos image
+# Run this script to start or update the NewRelic system monitor (nrsysmond)
+# on the master node.
 
-kontena master ssh -i $EC2_KEYS_DIR/kontena.pem \
-  docker stop nrsysmond
+function master_ssh {
+  kontena master ssh -i $KONTENA_SSH_KEY $@
+}
 
-kontena master ssh -i $EC2_KEYS_DIR/kontena.pem \
-  docker rm nrsysmond
+# master_ssh docker ps
 
-# Use settings from
+master_ssh docker stop nrsysmond
+
+master_ssh docker rm nrsysmond
+
+# Use dockerk options from
 # https://github.com/christian-blades-cb/newrelic-docker/blob/master/newrelic.service
 
-kontena master ssh -i $EC2_KEYS_DIR/kontena.pem \
-  docker run \
+master_ssh docker run \
     -d \
     --name nrsysmond \
     --restart always \
@@ -32,5 +35,4 @@ kontena master ssh -i $EC2_KEYS_DIR/kontena.pem \
     # -e NRSYSMOND_host_root=/host \
     # -e NRSYSMOND_cgroup_root=/host/sys/fs/cgroup \
 
-# kontena master ssh -i $EC2_KEYS_DIR/kontena.pem \
-#   docker logs -f nrsysmond
+# master_ssh docker logs -f nrsysmond
