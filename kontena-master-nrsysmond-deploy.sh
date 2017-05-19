@@ -23,12 +23,12 @@ kontena master ssh -i $EC2_KEYS_DIR/kontena.pem \
     -e NRSYSMOND_hostname=kontena/master \
     -e NRSYSMOND_license_key=$NEWRELIC_LICENSE \
     -e NRSYSMOND_cgroup_style=0 \
-    -e NRSYSMOND_loglevel=debug \
     -v /dev:/dev:ro \
     -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
     -v /var/run/docker.sock:/var/run/docker.sock \
     christianbladescb/newrelic-coreos
 
+    # -e NRSYSMOND_loglevel=debug \
     # -e NRSYSMOND_host_root=/host \
     # -e NRSYSMOND_cgroup_root=/host/sys/fs/cgroup \
 
