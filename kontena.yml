@@ -1,5 +1,6 @@
 stack: kdgm/newrelic-kontena
 version: 0.1.0
+description: Setup and configure NewRelic nrsysmond on kontena nodes.
 
 variables:
   newrelic_license_key:
