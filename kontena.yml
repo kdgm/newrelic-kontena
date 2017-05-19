@@ -1,4 +1,4 @@
-stack: kdgm/newrelic
+stack: kdgm/newrelic-kontena
 version: 0.1.0
 
 variables:
