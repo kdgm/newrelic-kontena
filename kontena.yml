@@ -1,5 +1,6 @@
-stack: kdgm/newrelic
+stack: kdgm/newrelic-kontena
 version: 0.1.0
+description: Setup and configure NewRelic nrsysmond on kontena nodes.
 
 variables:
   newrelic_license_key:
@@ -13,7 +14,7 @@ variables:
 services:
   nrsysmond:
     build: .
-    image: quay.io/kdgm/newrelic:latest
+    image: kdgm/newrelic-kontena:latest
     secrets:
       - secret: NEWRELIC_LICENSE_KEY
         name: NRSYSMOND_license_key
