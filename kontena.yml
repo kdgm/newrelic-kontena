@@ -25,6 +25,5 @@ services:
       strategy: daemon
     network_mode: host
     volumes:
-      - /dev:/dev:ro
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /:/host:ro
       - /var/run/docker.sock:/var/run/docker.sock
