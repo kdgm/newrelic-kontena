@@ -1,3 +1,6 @@
+## Release 0.2.0
+- [enh] migrate to newrelic-infra
+
 ## Release 2017-05-19-1115
 - [enh] push kdgm/newrelic-docker image to public Docker Hub Hub repo
 - [enh] add README.md
