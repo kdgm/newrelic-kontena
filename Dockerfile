@@ -1,5 +1,4 @@
-# FROM: https://hub.docker.com/r/christianbladescb/newrelic-coreos/
-FROM christianbladescb/newrelic-coreos
+FROM newrelic/infrastructure:latest
 
 MAINTAINER Klaas Jan Wierenga <k.j.wierenga@gmail.com>
 
