@@ -19,11 +19,11 @@ services:
       - secret: NEWRELIC_LICENSE_KEY
         name: NRIA_LICENSE_KEY
         type: env
-    network_mode: host
     pid: host
     privileged: true
     deploy:
       strategy: daemon
+    network_mode: host
     volumes:
       - /dev:/dev:ro
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
