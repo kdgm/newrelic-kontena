@@ -22,6 +22,8 @@ services:
     deploy:
       strategy: daemon
     network_mode: host
+    cap_add:
+      - SYS_PTRACE
     volumes:
       - /:/host:ro
       - /var/run/docker.sock:/var/run/docker.sock
