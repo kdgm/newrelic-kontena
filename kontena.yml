@@ -12,7 +12,7 @@ variables:
       vault: NEWRELIC_LICENSE_KEY
 
 services:
-  nrsysmond:
+  newrelic-infra:
     build: .
     image: kdgm/newrelic-kontena:latest
     secrets:
