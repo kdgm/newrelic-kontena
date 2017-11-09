@@ -1,6 +1,6 @@
 stack: kdgm/newrelic-kontena
 version: 0.1.0
-description: Setup and configure NewRelic nrsysmond on kontena nodes.
+description: Setup and configure newrelic-infra agent on kontena nodes.
 
 variables:
   newrelic_license_key:
@@ -12,24 +12,18 @@ variables:
       vault: NEWRELIC_LICENSE_KEY
 
 services:
-  nrsysmond:
+  newrelic-infra:
     build: .
     image: kdgm/newrelic-kontena:latest
     secrets:
       - secret: NEWRELIC_LICENSE_KEY
-        name: NRSYSMOND_license_key
+        name: NRIA_LICENSE_KEY
         type: env
-    environment:
-      NRSYSMOND_cgroup_style: 0
-      # NRSYSMOND_host_root: /host
-      # NRSYSMOND_cgroup_root: /host/sys/fs/cgroup
-      # NRSYSMOND_loglevel: debug
-    network_mode: host
-    pid: host
-    privileged: true
     deploy:
       strategy: daemon
+    network_mode: host
+    cap_add:
+      - SYS_PTRACE
     volumes:
-      - /dev:/dev:ro
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /:/host:ro
       - /var/run/docker.sock:/var/run/docker.sock

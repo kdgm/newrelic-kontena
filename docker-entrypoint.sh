@@ -2,6 +2,6 @@
 
 set -e
 
-export NRSYSMOND_hostname="kontena/${KONTENA_GRID_NAME}/${KONTENA_NODE_NAME}"
+export NRIA_DISPLAY_NAME="kontena/${KONTENA_GRID_NAME}/${KONTENA_NODE_NAME}"
 
 exec "$@"
