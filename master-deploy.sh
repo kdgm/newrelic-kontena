@@ -21,6 +21,7 @@ master_ssh docker run \
     --name newrelic-infra \
     --restart always \
     --network=host \
+    --cap-add=SYS_PTRACE \
     -e NRIA_DISPLAY_NAME="kontena/master" \
     -e NRIA_LICENSE_KEY="$NEWRELIC_LICENSE" \
     -v "/:/host:ro" \
