@@ -14,14 +14,14 @@ Check you are on the desired grid (e.g. staging or production)
 
 ### Deploying after changing `kontena.yml`
 
-    $ kontena stack upgrade newrelic
+    $ kontena stack upgrade newrelic-kontena
 
 ### Deploying after changing `Dockerfile` or `docker-entrypoint.sh`
 
-This builds `kdgm/newrelic-kontena` image and pushes the image to Docker Hub.
+This builds `kdgm/newrelic-infra` image and pushes the image to Docker Hub.
 
     $ kontena stack build
-    $ kontena stack upgrade newrelic
+    $ kontena stack upgrade newrelic-kontena
 
 ## Master
 
