@@ -17,7 +17,7 @@ services:
     image: kdgm/newrelic-kontena:latest
     secrets:
       - secret: NEWRELIC_LICENSE_KEY
-        name: NRSYSMOND_license_key
+        name: NRIA_LICENSE_KEY
         type: env
     environment:
       NRSYSMOND_cgroup_style: 0
