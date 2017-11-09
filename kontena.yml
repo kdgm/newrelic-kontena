@@ -1,5 +1,5 @@
 stack: kdgm/newrelic-kontena
-version: 0.1.0
+version: 0.2.0
 description: Setup and configure newrelic-infra agent on kontena nodes.
 
 variables:
