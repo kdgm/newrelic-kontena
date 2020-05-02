@@ -4,7 +4,7 @@
 # (newrelic-infra) on the master node.
 
 function master_ssh {
-  kontena master ssh -i $KONTENA_SSH_KEY $@
+  kontena master ssh -i $KONTENA_SSH_KEY -- $@
 }
 
 # master_ssh docker ps
