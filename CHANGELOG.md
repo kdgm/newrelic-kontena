@@ -1,3 +1,6 @@
+## Release 0.3.0
+- [fix] master-deploy.sh script to correct run deploy script on the Kontena master
+
 ## Release 0.2.0
 - [enh] migrate to newrelic-infra
 
